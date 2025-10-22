@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        <%= title %> — Aplicación SSR
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>
+            <%= gatito.nombre %>
+        </h1>
+        <p>
+            <%= gatito.descripcion %>
+        </p>
+        <div class="imagen-wrap">
+            <img src="<%= gatito.imagenUrl %>" alt="Gatito" />
+        </div>
+        <a class="btn" href="/">Volver al inicio</a>
+    </main>
+</body>
+
+</html>

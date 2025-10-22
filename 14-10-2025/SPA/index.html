@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aplicación SPA Gatito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#/" id="link-inicio">Inicio</a>
+        <a href="#/gatito" id="link-gatito">Gatito</a>
+    </nav>
+
+
+    <main id="app" class="container"></main>
+
+
+    <script>
+        const routes = {
+            '/': `
+<h1>Pantalla de Inicio</h1>
+<p>Bienvenido a la aplicación SPA renderizada en el cliente.</p>
+<a class="btn" href="#/gatito">Ver gatito</a>
+`,
+            '/gatito': `
+<h1>Gatito</h1>
+<p>Un tierno gatito que vive en una SPA.</p>
+<div class="imagen-wrap">
+<img src="./public/cat.webp" alt="Gatito" />
+</div>
+<a class="btn" href="#/">Volver al inicio</a>
+`
+        };
+
+
+        function router() {
+            const hash = window.location.hash.replace('#', '') || '/';
+            const app = document.getElementById('app');
+            app.innerHTML = routes[hash] || '<h1>404</h1><p>Página no encontrada</p>';
+        }
+
+
+        window.addEventListener('hashchange', router);
+        window.addEventListener('load', router);
+    </script>
+</body>
+
+</html>
