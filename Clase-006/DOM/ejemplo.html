@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1 id="titulo">Hola mundo!</h1>
+    <button id="cambiarBtn">Cambiar texto</button>
+
+    <script>
+      // Encuentra el elemento <h1> por su ID
+      const title = document.getElementById("titulo");
+
+      // Encuentra el elemento boton
+      const button = document.getElementById("cambiarBtn");
+
+      // Escucha el evento click en el boton
+      button.addEventListener("click", function() {
+        // Cambia el texto del elemento <h1>
+        title.textContent = "Clickeaste el boton!";
+      });
+    </script>
+  </body>
+</html>

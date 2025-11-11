@@ -1,0 +1,26 @@
+@startmindmap
+* W3C (World Wide Web Consortium)
+** Que es?
+*** Organizacion internacional que desarrolla estandares abiertos de web
+*** Fundado por Tim Berners-Lee en 1994
+*** Asegura la interoperabilida y crecimiento
+** Mision
+*** Guiar a la web a su maximo potencial
+*** Desarrollar protocolos u lineamientos para asegurar el crecimiento de la web a largo plazo
+*** Promover accesibilidad, privacidad y transparencia
+** Tipos de estandares
+*** HTML / XHTML / XML
+*** CSS (Cascading Style Sheets)
+*** DOM (Document Object Model)
+*** WCAG (Web Content Accessibility Guidelines)
+*** Web APIs y Semantic Web standares
+** Participacion
+*** Abierto a companias, desarrolladores, investigaddores, e individduos
+*** Organizado en grupos e trabajo y grupos comunitarios
+*** Proceso colaborativo y basado en el consenso.
+** Importancia para los dedsarrolladores web
+*** Asegura comportamientos consistendes entre navegadores
+*** Promueve accesibilidadd e inclusividad.
+*** Fomenta el uso de tecnologías interoperables y preparadas para el futuro.
+*** Previene fragmentacion de la web.
+@endmindmap
