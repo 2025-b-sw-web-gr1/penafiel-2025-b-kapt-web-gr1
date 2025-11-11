@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos Básicos de HTML - Ejemplos Educativos</title>
+    <style>
+        .boton-ejemplo {
+            background-color: blue;
+            color:red;
+        }
+        .boton-ejemplo {
+            background-color: red;
+        }
+        .boton-ejemplo {
+            background-color: yellow;
+        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: #0074D9; color: #fff; padding: 1rem; text-align: center; }
+        main { max-width: 900px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+        section { margin-bottom: 2rem; }
+        h2 { color: #0074D9; }
+        pre { background: #eee; padding: 1rem; border-radius: 5px; overflow-x: auto; }
+        .ejemplo { margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color:black;">Conceptos Básicos de HTML</h1>
+        <p>Ejemplos educativos basados en W3Schools</p>
+    </header>
+    <main>
+ 
+    <button id="botoncito"
+            class="boton-ejemplo"
+    >
+        AQUI EL BOTON
+    </button>
+ 
+    <button
+    >
+        Boton 2
+    </button>
+    <button class="boton-secundario"
+    >
+        Boton 3
+    </button>
+        <section>
+            <h2>¿Qué es HTML?</h2>
+            <p>HTML es el lenguaje estándar para crear páginas web. Significa <strong>HyperText Markup Language</strong>.</p>
+        </section>
+        <section>
+            <h2>Estructura Básica de una Página HTML</h2>
+            <div class="ejemplo">
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Mi primer encabezado&lt;/h1&gt;
+    &lt;p&gt;Mi primer párrafo.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+        </section>
+        <section>
+            <h2>Encabezados HTML</h2>
+            <div class="ejemplo">
+                <pre>&lt;h1&gt;Este es un encabezado grande&lt;/h1&gt;
+&lt;h2&gt;Este es un encabezado mediano&lt;/h2&gt;
+&lt;h3&gt;Este es un encabezado pequeño&lt;/h3&gt;</pre>
+            </div>
+        </section>
+        <section>
+            <h2>Párrafos HTML</h2>
+            <div class="ejemplo">
+                <pre>&lt;p&gt;Este es un párrafo.&lt;/p&gt;
+&lt;p&gt;Este es otro párrafo.&lt;/p&gt;</pre>
+            </div>
+        </section>
+        <section>
+            <h2>Enlaces HTML</h2>
+            <div class="ejemplo">
+                <pre>&lt;a href="https://www.w3schools.com"&gt;Visita W3Schools&lt;/a&gt;</pre>
+            </div>
+        </section>
+        <section>
+            <h2>Imágenes HTML</h2>
+            <div class="ejemplo">
+                <pre>&lt;img src="https://www.w3schools.com/html/img_girl.jpg" alt="Niña" width="200"&gt;</pre>
+            </div>
+        </section>
+        <section>
+            <h2>Botones HTML</h2>
+            <div class="ejemplo">
+                <pre>&lt;button&gt;Haz clic aquí&lt;/button&gt;</pre>
+            </div>
+        </section>
+        <section>
+            <h2>Elementos HTML</h2>
+            <p>Un <strong>elemento HTML</strong> normalmente consta de una etiqueta de apertura, contenido y una etiqueta de cierre. Algunos elementos no tienen contenido ni etiqueta de cierre (elementos vacíos).</p>
+            <div class="ejemplo">
+                <pre>&lt;p&gt;Este es un párrafo&lt;/p&gt;
+&lt;br&gt;
+&lt;img src="https://www.w3schools.com/html/img_girl.jpg" alt="Ejemplo Imagen"&gt;</pre>
+            </div>
+            <ul>
+                <li><strong>Elemento con contenido:</strong> <code>&lt;p&gt;Hola&lt;/p&gt;</code></li>
+                <li><strong>Elemento vacío:</strong> <code>&lt;br&gt;</code> o <code>&lt;img&gt;</code></li>
+            </ul>
+            <p>Los elementos HTML pueden estar anidados unos dentro de otros. Por ejemplo:</p>
+            <div class="ejemplo">
+                <pre>&lt;div&gt;
+  &lt;p&gt;Un párrafo dentro de un div.&lt;/p&gt;
+&lt;/div&gt;</pre>
+            </div>
+            <h3>Ejemplo: Encabezados HTML</h3>
+            <p>Los encabezados HTML van de <code>&lt;h1&gt;</code> (más importante) a <code>&lt;h6&gt;</code> (menos importante):</p>
+            <div class="ejemplo">
+                <pre>&lt;h1&gt;Encabezado 1&lt;/h1&gt;
+&lt;h2&gt;Encabezado 2&lt;/h2&gt;
+&lt;h3&gt;Encabezado 3&lt;/h3&gt;
+&lt;h4&gt;Encabezado 4&lt;/h4&gt;
+&lt;h5&gt;Encabezado 5&lt;/h5&gt;
+&lt;h6&gt;Encabezado 6&lt;/h6&gt;</pre>
+            </div>
+            <p>Así se ven los encabezados en HTML:</p>
+            <div class="ejemplo">
+                <h1>Encabezado 1</h1>
+                <h2>Encabezado 2</h2>
+                <h3>Encabezado 3</h3>
+                <h4>Encabezado 4</h4>
+                <h5>Encabezado 5</h5>
+                <h6>Encabezado 6</h6>
+            </div>
+            <p>Recuerda: Las etiquetas de cierre llevan una barra (<code>/</code>), por ejemplo <code>&lt;/p&gt;</code>.</p>
+        </section>
+        <section>
+            <h2>¡Explora y aprende!</h2>
+            <p>Esta página irá creciendo con más ejemplos y conceptos de HTML.</p>
+        </section>
+    </main>
+</body>
+    <style>
+       
+        .boton-ejemplo {
+            background-color: orange;
+        }
+        button {
+                background-color: coral;
+                padding: 4px;
+                margin: 2px;
+                border-radius: 10px;
+                cursor: pointer;
+        }
+        button:hover {
+                background-color: rgb(157, 78, 49);
+        }
+        .boton-ejemplo {
+            background-color: green;
+        }
+        .boton-ejemplo:hover {
+            background-color: greenyellow;
+            animation-name: botonEjemploAnimacion;
+            animation-duration: 4s;
+        }
+       
+        .boton-secundario {
+            background-color: rgb(219, 219, 219);
+        }
+        .boton-secundario:hover {
+            background-color: black;
+            color: white;
+            animation-name: botonSecundarioAnimacion;
+            animation-duration: 4s;
+        }
+        @keyframes botonEjemploAnimacion {
+            from {background-color: green;}
+            to {background-color: greenyellow;}
+        }
+        @keyframes botonSecundarioAnimacion {
+            0%   {
+                background-color: rgb(219, 219, 219);
+                color: black;
+            }
+            25%  {background-color: rgb(149, 149, 149);}
+            50%  {background-color: rgb(65, 65, 65);}
+            100% {
+                background-color: black;
+                color: white;
+            }
+        }
+        /*
+        style!
+        id
+        class
+        tag
+ 
+        */
+    </style>
+</html>
