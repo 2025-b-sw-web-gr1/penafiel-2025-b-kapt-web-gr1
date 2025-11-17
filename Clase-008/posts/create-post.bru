@@ -1,0 +1,15 @@
+meta {
+  name: create-post
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://jsonplaceholder.typicode.com/posts
+  body: json
+  auth: none
+}
+
+body:json {
+  { "title": "foo", "body": "bar", "userId": 1 }
+}

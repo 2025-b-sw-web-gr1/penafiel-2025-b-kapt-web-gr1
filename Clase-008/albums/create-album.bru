@@ -1,0 +1,18 @@
+meta {
+  name: create-album
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://jsonplaceholder.typicode.com/albums
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Vacation",
+    "userId": 1
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "comments",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
