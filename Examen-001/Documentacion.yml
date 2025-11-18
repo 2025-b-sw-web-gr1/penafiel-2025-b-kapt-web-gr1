@@ -130,6 +130,31 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Album'
+    post:
+      summary: Crear un nuevo album
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Album'
+      responses:
+        '201':
+          description: Album creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+  /albums/1:
+    get:
+      summary: Obtener un album por ID
+      responses:
+        '200':
+          description: Detalles del album
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
   /photos:
     get:
       summary: Obtener todas las fotos
