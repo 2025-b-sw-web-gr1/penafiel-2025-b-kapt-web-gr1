@@ -167,6 +167,18 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Photo'
+  /photos?albumId=1:
+    get:
+      summary: Obtener fotos por ID de album
+      responses:
+        '200':
+          description: Lista de fotos para el album especificado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Photo'
   /todos:
     get:
       summary: Obtener todos los todos
