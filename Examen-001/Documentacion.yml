@@ -1,4 +1,4 @@
-openapi: '3.0.3'
+openapi: "3.0.3"
 info:
   title: Documentacion de APIs de Bruno
   description: Documentación de APIs generadas con Bruno
@@ -11,14 +11,14 @@ paths:
     get:
       summary: Obtener todos los posts
       responses:
-        '200':
+        "200":
           description: Lista de posts
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Post'
+                  $ref: "#/components/schemas/Post"
     post:
       summary: Crear un nuevo post
       requestBody:
@@ -26,24 +26,24 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Post'
+              $ref: "#/components/schemas/Post"
       responses:
-        '201':
+        "201":
           description: Post creado exitosamente
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Post'
+                $ref: "#/components/schemas/Post"
   /posts/1:
     get:
       summary: Obtener un post por ID
       responses:
-        '200':
+        "200":
           description: Detalles del post
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Post'
+                $ref: "#/components/schemas/Post"
     put:
       summary: Actualizar un post por ID
       requestBody:
@@ -51,14 +51,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Post'
+              $ref: "#/components/schemas/Post"
       responses:
-        '200':
+        "200":
           description: Post actualizado exitosamente
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Post'
+                $ref: "#/components/schemas/Post"
     patch:
       summary: Actualización parcial de un post por ID
       requestBody:
@@ -66,31 +66,31 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Post'
+              $ref: "#/components/schemas/Post"
       responses:
-        '200':
+        "200":
           description: Post actualizado parcialmente exitosamente
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Post'
+                $ref: "#/components/schemas/Post"
     delete:
       summary: Eliminar un post por ID
       responses:
-        '200':
+        "200":
           description: Post eliminado exitosamente
   /comments:
     get:
       summary: Obtener todos los comentarios
       responses:
-        '200':
+        "200":
           description: Lista de comentarios
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Comment'
+                  $ref: "#/components/schemas/Comment"
     post:
       summary: Crear un nuevo comentario
       requestBody:
@@ -98,38 +98,38 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Comment'
+              $ref: "#/components/schemas/Comment"
       responses:
-        '201':
+        "201":
           description: Comentario creado exitosamente
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Comment'
+                $ref: "#/components/schemas/Comment"
   /comments?postId=1:
     get:
       summary: Obtener comentarios por ID de post
       responses:
-        '200':
+        "200":
           description: Lista de comentarios para el post especificado
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Comment'
+                  $ref: "#/components/schemas/Comment"
   /albums:
     get:
       summary: Obtener todos los albumes
       responses:
-        '200':
+        "200":
           description: Lista de albumes
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Album'
+                  $ref: "#/components/schemas/Album"
     post:
       summary: Crear un nuevo album
       requestBody:
@@ -137,60 +137,60 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Album'
+              $ref: "#/components/schemas/Album"
       responses:
-        '201':
+        "201":
           description: Album creado exitosamente
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Album'
+                $ref: "#/components/schemas/Album"
   /albums/1:
     get:
       summary: Obtener un album por ID
       responses:
-        '200':
+        "200":
           description: Detalles del album
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Album'
+                $ref: "#/components/schemas/Album"
   /photos:
     get:
       summary: Obtener todas las fotos
       responses:
-        '200':
+        "200":
           description: Lista de fotos
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Photo'
+                  $ref: "#/components/schemas/Photo"
   /photos?albumId=1:
     get:
       summary: Obtener fotos por ID de album
       responses:
-        '200':
+        "200":
           description: Lista de fotos para el album especificado
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Photo'
+                  $ref: "#/components/schemas/Photo"
   /todos:
     get:
       summary: Obtener todos los todos
       responses:
-        '200':
+        "200":
           description: Lista de todos
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Todo'
+                  $ref: "#/components/schemas/Todo"
     post:
       summary: Crear un nuevo todo
       requestBody:
@@ -198,46 +198,46 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Todo'
+              $ref: "#/components/schemas/Todo"
       responses:
-        '201':
+        "201":
           description: Todo creado exitosamente
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Todo'
+                $ref: "#/components/schemas/Todo"
   /todos/1:
     get:
       summary: Obtener un todo por ID
       responses:
-        '200':
+        "200":
           description: Detalles del todo
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Todo'
+                $ref: "#/components/schemas/Todo"
   /users:
     get:
       summary: Obtener todos los usuarios
       responses:
-        '200':
+        "200":
           description: Obtener todos los usuarios
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/User'
+                  $ref: "#/components/schemas/User"
   /users/1:
     get:
       summary: Obtener un usuario por ID
       responses:
-        '200':
+        "200":
           description: Detalles del usuario
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: "#/components/schemas/User"
 components:
   schemas:
     Post:
@@ -326,7 +326,7 @@ components:
                   type: string
                 lng:
                   type: string
-        phone: 
+        phone:
           type: string
         website:
           type: string
