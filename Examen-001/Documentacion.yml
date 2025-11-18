@@ -191,6 +191,31 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Todo'
+    post:
+      summary: Crear un nuevo todo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Todo'
+      responses:
+        '201':
+          description: Todo creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+  /todos/1:
+    get:
+      summary: Obtener un todo por ID
+      responses:
+        '200':
+          description: Detalles del todo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
   /users:
     get:
       summary: Obtener todos los usuarios
@@ -203,6 +228,16 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/User'
+  /users/1:
+    get:
+      summary: Obtener un usuario por ID
+      responses:
+        '200':
+          description: Detalles del usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
 components:
   schemas:
     Post:
