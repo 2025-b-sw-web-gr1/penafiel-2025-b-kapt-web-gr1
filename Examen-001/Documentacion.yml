@@ -91,6 +91,33 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Comment'
+    post:
+      summary: Crear un nuevo comentario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '201':
+          description: Comentario creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+  /comments?postId=1:
+    get:
+      summary: Obtener comentarios por ID de post
+      responses:
+        '200':
+          description: Lista de comentarios para el post especificado
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
   /albums:
     get:
       summary: Obtener todos los albumes
