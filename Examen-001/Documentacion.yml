@@ -1,0 +1,182 @@
+openapi: '3.0.3'
+info:
+  title: Documentacion de APIs de Bruno
+  description: Documentación de APIs generadas con Bruno
+  version: 1.0.0
+servers:
+  - url: https://jsonplaceholder.typicode.com
+
+paths:
+  /posts:
+    get:
+      summary: Obtener todos los posts
+      responses:
+        '200':
+          description: Lista de posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+  /comments:
+    get:
+      summary: Obtener todos los comentarios
+      responses:
+        '200':
+          description: Lista de comentarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+  /albums:
+    get:
+      summary: Obtener todos los albumes
+      responses:
+        '200':
+          description: Lista de albumes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Album'
+  /photos:
+    get:
+      summary: Obtener todas las fotos
+      responses:
+        '200':
+          description: Lista de fotos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Photo'
+  /todos:
+    get:
+      summary: Obtener todos los todos
+      responses:
+        '200':
+          description: Lista de todos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Todo'
+  /users:
+    get:
+      summary: Obtener todos los usuarios
+      responses:
+        '200':
+          description: Obtener todos los usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+components:
+  schemas:
+    Post:
+      type: object
+      properties:
+        userId:
+          type: integer
+        id:
+          type: integer
+        title:
+          type: string
+        body:
+          type: string
+    Comment:
+      type: object
+      properties:
+        postId:
+          type: integer
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        body:
+          type: string
+    Album:
+      type: object
+      properties:
+        userId:
+          type: integer
+        id:
+          type: integer
+        title:
+          type: string
+    Photo:
+      type: object
+      properties:
+        albumId:
+          type: integer
+        id:
+          type: integer
+        title:
+          type: string
+        url:
+          type: string
+        thumbnailUrl:
+          type: string
+    Todo:
+      type: object
+      properties:
+        userId:
+          type: integer
+        id:
+          type: integer
+        title:
+          type: string
+        completed:
+          type: boolean
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        username:
+          type: string
+        email:
+          type: string
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            suite:
+              type: string
+            city:
+              type: string
+            zipcode:
+              type: string
+            geo:
+              type: object
+              properties:
+                lat:
+                  type: string
+                lng:
+                  type: string
+        phone: 
+          type: string
+        website:
+          type: string
+        company:
+          type: object
+          properties:
+            name:
+              type: string
+            catchPhrase:
+              type: string
+            bs:
+              type: string
