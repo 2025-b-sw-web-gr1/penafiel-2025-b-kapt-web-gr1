@@ -1,0 +1,205 @@
+openapi: 3.0.0
+info:
+  title: API Gestor de Proyectos y Tareas
+  description: API de ejemplo para practicar relaciones 1 a Muchos (1:N).
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Servidor Local
+
+components:
+  schemas:
+    # Esquema del Proyecto
+    Project:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Desarrollo Web"
+        description:
+          type: string
+          example: "Crear landing page para cliente"
+        status:
+          type: string
+          enum: [activo, pausado, finalizado]
+          example: "activo"
+    
+    # Esquema de la Tarea (Incluye projectId para la relación)
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 101
+        projectId:
+          type: integer
+          description: ID del proyecto al que pertenece (Foreign Key)
+          example: 1
+        name:
+          type: string
+          example: "Diseñar Mockup"
+        description:
+          type: string
+          example: "Usar Figma para el diseño inicial"
+        status:
+          type: string
+          enum: [pendiente, en_progreso, completada]
+          example: "pendiente"
+
+paths:
+  # --- RUTAS DE PROYECTOS ---
+  /projects:
+    get:
+      summary: Obtener todos los proyectos
+      tags: [Projects]
+      responses:
+        '200':
+          description: Lista de proyectos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+    post:
+      summary: Crear un nuevo proyecto
+      tags: [Projects]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        '201':
+          description: Proyecto creado exitosamente
+
+  /projects/{projectId}:
+    get:
+      summary: Obtener un proyecto por ID
+      tags: [Projects]
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detalles del proyecto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '404':
+          description: Proyecto no encontrado
+    put:
+      summary: Actualizar un proyecto
+      tags: [Projects]
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        '200':
+          description: Proyecto actualizado
+    delete:
+      summary: Eliminar un proyecto
+      tags: [Projects]
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Proyecto eliminado (y sus tareas asociadas)
+
+  # --- RUTAS DE TAREAS (RELACIÓN 1:N) ---
+  
+  # Listar tareas DE UN proyecto específico
+  /projects/{projectId}/tasks:
+    get:
+      summary: Obtener todas las tareas de un proyecto específico
+      tags: [Tasks]
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: ID del proyecto padre
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Lista de tareas del proyecto
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+    
+    # Crear tarea DENTRO DE un proyecto específico
+    post:
+      summary: Crear una tarea asignada a un proyecto
+      tags: [Tasks]
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '201':
+          description: Tarea creada y vinculada al proyecto
+
+  # Operaciones sobre tareas individuales (Editar/Borrar)
+  /tasks/{taskId}:
+    put:
+      summary: Actualizar una tarea específica
+      tags: [Tasks]
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '200':
+          description: Tarea actualizada
+    delete:
+      summary: Eliminar una tarea específica
+      tags: [Tasks]
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Tarea eliminada
